@@ -49,43 +49,15 @@
 			<nav class="navbar navbar-light">
 				<form class="form-inline">
 					<button class="btn btn-outline-primary" data-toggle="modal" data-target="#login" type="button">Masuk</button>
-					<button class="btn btn-outline-primary ml-3" type="button">Daftar</button>
+					<button class="btn btn-outline-primary ml-3" data-toggle="modal" data-target="#register" type="button" type="button">Daftar</button>
 				</form>
 			</nav>
 		</div>
 	</nav>
 	<!-- end navbar -->
 
-	<!-- modal login -->
-	<div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Form Login</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form>
-						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">Email</label>
-							<input type="email" class="form-control" id="recipient-name">
-						</div>
-						<div class="form-group">
-							<label for="message-text" class="col-form-label">Password</label>
-							<input type="password" class="form-control" id="message-text"></input>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Login</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end modal login -->
+	<?php include 'auth/login.php' ?>
+	<?php include 'auth/register.php' ?>
 
 	<!-- jumbotron -->
 	<div class="jumbotron jumbotron-fluid">
