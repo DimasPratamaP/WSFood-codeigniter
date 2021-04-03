@@ -27,7 +27,7 @@ class Register extends Controller
         if($this->validate($rules)){
             $model = new UserModel();
             $data = [
-                'nama'     => $this->request->getVar('name'),
+                'nama'     => $this->request->getVar('nama'),
                 'email'    => $this->request->getVar('email'),
                 'alamat'    => $this->request->getVar('alamat'),
                 'nohp'    => $this->request->getVar('nohp'),
