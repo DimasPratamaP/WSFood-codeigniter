@@ -59,6 +59,9 @@
 	<?php include 'auth/login.php' ?>
 	<?php include 'auth/register.php' ?>
 
+	<?php if(session()->getFlashdata('msg')):?>
+		<div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
+	<?php endif;?>
 	<!-- jumbotron -->
 	<div class="jumbotron jumbotron-fluid">
 		<div class="container">
