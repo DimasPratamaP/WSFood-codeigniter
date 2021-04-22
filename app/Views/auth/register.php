@@ -31,7 +31,7 @@
                         <input type="password" class="form-control" id="password" name="password"></input>
                     </div>
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label">Password</label>
+                        <label for="message-text" class="col-form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="confpassword" name="confpassword"></input>
                     </div>
                 </div>

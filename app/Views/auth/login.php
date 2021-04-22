@@ -9,20 +9,20 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="Auth/login/doLogin" method="post">
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Email</label>
-                        <input type="email" class="form-control" id="recipient-name">
+                        <input type="email" class="form-control" id="recipient-name" name="email"></input>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Password</label>
-                        <input type="password" class="form-control" id="message-text"></input>
+                        <input type="password" class="form-control" id="message-text" name="password"></input>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Login</button>
             </div>
         </div>
     </div>
