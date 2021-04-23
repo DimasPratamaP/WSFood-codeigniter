@@ -34,7 +34,7 @@ class Database extends \CodeIgniter\Database\Config
 	public $default = [
 		'DSN'      => '',
 		'hostname' => 'localhost',
-		'username' => '',
+		'username' => 'root',
 		'password' => '',
 		'database' => 'wsfood-ci',
 		'DBDriver' => 'MySQLi',
