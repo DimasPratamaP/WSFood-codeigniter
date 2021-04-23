@@ -33,6 +33,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/food', 'Home::food');
+$routes->get('/logout', 'Auth\Login::logout');
+$routes->get('/dashboard', 'Dashboard::index',['filter' => 'Auth']);
 
 /**
  * --------------------------------------------------------------------
