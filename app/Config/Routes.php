@@ -34,7 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/food', 'Home::food');
 $routes->get('/logout', 'Auth\Login::logout');
-$routes->get('/dashboard', 'Dashboard::index',['filter' => 'Auth']);
+$routes->get('/home', 'Dashboard::home',['filter' => 'Auth']);
 
 /**
  * --------------------------------------------------------------------
