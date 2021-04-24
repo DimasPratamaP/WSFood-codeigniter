@@ -4,9 +4,10 @@ use CodeIgniter\Controller;
  
 class Dashboard extends Controller
 {
-    public function index()
+    public function home()
     {
         $session = session();
-        echo "Welcome back, ".$session->get('nama');
+        $data_nama = $session->get('nama');
+        return view('home', compact('data_nama'));
     }
 }
