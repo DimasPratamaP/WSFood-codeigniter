@@ -34,7 +34,10 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/food', 'Home::food');
 $routes->get('/logout', 'Auth\Login::logout');
-$routes->get('/home', 'Dashboard::home',['filter' => 'Auth']);
+$routes->group('users', ['filter' => 'Auth'], function($routes){
+	$routes->get('home', 'Dashboard::home');
+	$routes->get('profile/(:segment)', 'Dashboard::profile/$1');
+});
 
 /**
  * --------------------------------------------------------------------
