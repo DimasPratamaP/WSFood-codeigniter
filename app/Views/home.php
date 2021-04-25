@@ -49,10 +49,10 @@
 			<nav class="navbar navbar-light">
                 <div class="btn-group">
                     <button type="button" class="btn btn-info dropdown-toggle mr-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php echo $data_nama; ?>
+                        <?= $nama ?>
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="<?= base_url('users/profile/'.$id) ?>">Settings</a>
                         <a class="dropdown-item" href="/logout">Logout</a>
                     </div>
                 </div>
