@@ -37,6 +37,8 @@ $routes->get('/logout', 'Auth\Login::logout');
 $routes->group('users', ['filter' => 'Auth'], function($routes){
 	$routes->get('home', 'Dashboard::home');
 	$routes->get('profile/(:segment)', 'Dashboard::profile/$1');
+	$routes->post('profile/edit/(:segment)', 'Dashboard::editProfile/$1');
+	$routes->get('account-security/(:segment)', 'Dashboard::accountSecurity/$1');
 });
 
 /**
