@@ -21,11 +21,14 @@
 </head>
 <body>
 <div class="container mt-5">
-  <?php if(session()->getFlashdata('message')):?>
+  	<?php if(session()->getFlashdata('message')):?>
 		<div class="alert alert-success"><?= session()->getFlashdata('message') ?></div>
 	<?php endif;?>
-  <?php if(session()->getFlashdata('error')):?>
+  	<?php if(session()->getFlashdata('error')):?>
 		<div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+	<?php endif;?>
+	<?php if(session()->getFlashdata('not_matching')):?>
+		<div class="alert alert-danger"><?= session()->getFlashdata('not_matching') ?></div>
 	<?php endif;?>
 	<div class="row">
 		<div class="col-md-3 ">
@@ -45,23 +48,23 @@
 		            </div>
 		            <div class="row">
 		                <div class="col-md-12">
-		                    <form method="post" action="">
+		                    <form method="post" action="<?= base_url('users/account-security/edit') ?>">
                               <div class="form-group row">
                                 <label for="password" class="col-4 col-form-label">Password Lama</label> 
                                 <div class="col-8">
-                                  <input id="password" name="password" placeholder="Password Lama" class="form-control here" required="required" type="password">
+                                  <input id="password" name="oldpassword" placeholder="Password Lama" class="form-control here" required="required" type="password">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="password" class="col-4 col-form-label">Password Baru</label> 
                                 <div class="col-8">
-                                  <input id="password" name="password" placeholder="Password Baru" class="form-control here" required="required" type="password">
+                                  <input id="password" name="newpassword" placeholder="Password Baru" class="form-control here" required="required" type="password">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="password" class="col-4 col-form-label">Konfirmasi Password Baru</label> 
                                 <div class="col-8">
-                                  <input id="password" name="password" placeholder="Konfirmasi Password Baru" class="form-control here" required="required" type="password">
+                                  <input id="password" name="repassword" placeholder="Konfirmasi Password Baru" class="form-control here" required="required" type="password">
                                 </div>
                               </div>
                               <div class="form-group row">
