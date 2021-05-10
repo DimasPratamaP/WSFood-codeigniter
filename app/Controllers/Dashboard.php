@@ -23,8 +23,7 @@ class Dashboard extends Controller
 
     public function profile($id)
 	{
-		$users = new UserModel();
-		$data['users'] = $users->where('id', $id)->first();
+		$data['users'] = $this->users->where('id', $id)->first();
 		
 		if(!$data['users']){
 			throw PageNotFoundException::forPageNotFound();
@@ -78,12 +77,40 @@ class Dashboard extends Controller
 
     public function accountSecurity($id)
     {
-        $users = new UserModel();
-		$data['users'] = $users->where('id', $id)->first();
+		$data['users'] = $this->users->where('id', $id)->first();
 		
 		if(!$data['users']){
 			throw PageNotFoundException::forPageNotFound();
 		}
 		echo view('account_security', $data);
+    }
+
+    public function changePassword()
+    {
+        $request = \Config\Services::request();
+
+        $pass=$request->getPost('oldpassword');
+        $npass=$request->getPost('newpassword');
+        $rpass=$request->getPost('repassword');
+        if($npass!=$rpass){
+            session()->setFlashdata('not_matching', 'Password baru tidak cocok dengan konfirmasi Password');
+            return redirect()->back();
+        }else{
+            $session = session();
+            $users = $this->users->where('email',$session->get('email'))->first();
+            $oldpass = $users['password'];
+            $verify_pass = password_verify($pass, $oldpass);
+            if($verify_pass){
+                $data = array(
+                            'password' => password_hash($npass,PASSWORD_DEFAULT)
+                            );
+                $this->users->update($users, $data); 
+                session()->setFlashdata('message', 'Update Password Berhasil');
+                return redirect()->back();
+            }else{
+                session()->setFlashdata('error', 'Password Lama tidak sesuai');
+                return redirect()->back();
+            }
+        }
     }
 }
