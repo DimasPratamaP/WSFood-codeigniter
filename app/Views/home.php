@@ -47,13 +47,16 @@
 				</li>
 			</ul>
 			<nav class="navbar navbar-light">
+				<div class="btn-group" >
+					<button type="button" class="btn btn-info mr-2" data-toggle="modal" data-target="#upload">Upload</button>
+				</div>
                 <div class="btn-group">
                     <button type="button" class="btn btn-info dropdown-toggle mr-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?= $nama ?>
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="<?= base_url('users/profile/'.$id) ?>">Settings</a>
-                        <a class="dropdown-item" href="/logout">Logout</a>
+                        <a class="dropdown-item" href="/logout">Post</a>
                     </div>
                 </div>
 			</nav>
@@ -63,6 +66,37 @@
 
 	<?php include 'auth/login.php' ?>
 	<?php include 'auth/register.php' ?>
+
+	<!-- modal upload -->
+	<div class="modal fade" id="upload" tabindex="-1" aria-labelledby="upload" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Upload</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>     
+				<form action="Auth/register/save" method="post">
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Image</label>
+							<input type="file" class="form-control" id="image" name="image">
+						</div>
+						<div class="form-group">
+							<label for="message-text" class="col-form-label">Deskripsi:</label>
+							<textarea class="form-control" id="message-text"></textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- end modal upload -->
 
 	<!-- jumbotron -->
 	<div class="jumbotron jumbotron-fluid">
