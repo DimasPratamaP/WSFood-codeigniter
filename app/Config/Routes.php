@@ -40,6 +40,7 @@ $routes->group('users', ['filter' => 'Auth'], function($routes){
 	$routes->post('profile/edit/(:segment)', 'Dashboard::editProfile/$1');
 	$routes->get('account-security/(:segment)', 'Dashboard::accountSecurity/$1');
 	$routes->post('account-security/edit', 'Dashboard::changePassword');
+	$routes->post('posts', 'PostController::save');
 });
 
 /**
