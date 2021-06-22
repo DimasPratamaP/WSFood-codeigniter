@@ -56,7 +56,7 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="<?= base_url('users/profile/'.$id) ?>">Settings</a>
-                        <a class="dropdown-item" href="/logout">Post</a>
+                        <a class="dropdown-item" href="/logout">Logout</a>
                     </div>
                 </div>
 			</nav>
@@ -77,15 +77,19 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>     
-				<form action="Auth/register/save" method="post">
+				<form method="post" action="<?= base_url('users/posts') ?>" enctype="multipart/form-data">
 					<div class="modal-body">
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Judul</label>
+							<input type="text" class="form-control" id="judul" name="judul">
+						</div>
 						<div class="form-group">
 							<label for="recipient-name" class="col-form-label">Image</label>
 							<input type="file" class="form-control" id="image" name="image">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label">Deskripsi:</label>
-							<textarea class="form-control" id="message-text"></textarea>
+							<textarea class="form-control" id="message-text" name="deskripsi"></textarea>
 						</div>
 					</div>
 					<div class="modal-footer">
