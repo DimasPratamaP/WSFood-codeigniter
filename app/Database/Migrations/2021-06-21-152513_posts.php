@@ -14,10 +14,10 @@ class Posts extends Migration
 				'auto_increment' => true
 			],
 			'users_id' => [
-				'type'       => 'INT',
+				'type'       	 => 'INT',
 				'constraint'     => 5,
-				'unsigned'   => true,
-				'null'       => true
+				'unsigned'   	 => true,
+				'null'       	 => true
 			],
 			'judul'       => [
 				'type'           => 'VARCHAR',
