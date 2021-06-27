@@ -1,5 +1,6 @@
 <?php namespace App\Controllers;
 
+use App\Models\PostModel;
 use App\Models\UserModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 use CodeIgniter\Controller;
@@ -11,6 +12,7 @@ class Dashboard extends Controller
     function __construct()
     {
         $this->users = new UserModel();
+        $this->posts = new PostModel();
     }
  
     public function home()
@@ -18,6 +20,7 @@ class Dashboard extends Controller
         $session = session();
         $data['nama'] = $session->get('nama');
         $data['id'] = $session->get('id');
+        $data['posts'] = $this->posts->viewPost();
         return view('home', $data);
     }
 
@@ -112,5 +115,15 @@ class Dashboard extends Controller
                 return redirect()->back();
             }
         }
+    }
+
+    public function posting($id)
+    {
+		$data['users'] = $this->users->where('id', $id)->first();
+		$data['posts'] = $this->posts->firstPost();
+		if(!$data['users']){
+			throw PageNotFoundException::forPageNotFound();
+		}
+		echo view('posts', $data);
     }
 }
