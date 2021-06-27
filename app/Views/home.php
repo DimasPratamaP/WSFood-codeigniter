@@ -126,103 +126,21 @@
 
 	<!-- card view -->
 	<div class="card-deck card-view">
+		<?php foreach ($posts as $d) : ?>
 		<div class="card">
-			<img src="<?php echo base_url('assets/images/Chicken_noodle_soup.jpg'); ?>" class="card-img-top h-50" alt="jumbotron-image">
+			<img src="<?= base_url('img/'.$d->image) ?> " class="card-img-top h-50" alt="jumbotron-image">
 			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+				<h5 class="card-title"><?= $d->judul ?></h5>
+				<p class="card-text"><?= $d->deskripsi ?></p>
 			</div>
 			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
+				<small class="text-muted"><?= $d->nama ?></small>
 			</div>
 		</div>
-		<div class="card">
-			<img src="<?php echo base_url('assets/images/fried-chicken.jpeg'); ?>" class="card-img-top h-50" alt="...">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
-			</div>
-		</div>
-		<div class="card">
-			<img src="<?php echo base_url('assets/images/high-angle.jpg'); ?>" class="card-img-top h-50" alt="...">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
-			</div>
-		</div>
-	</div>
-	<div class="card-deck mt-3">
-		<div class="card">
-			<img src="<?php echo base_url('assets/images/cocktail.jpg'); ?>" class="card-img-top h-50" alt="jumbotron-image">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
-			</div>
-		</div>
-		<div class="card">
-			<img src="<?php echo base_url('assets/images/pineaplle.jpg'); ?>" class="card-img-top h-50" alt="...">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
-			</div>
-		</div>
-		<div class="card">
-			<img src="<?php echo base_url('assets/images/pink_shirley.jpg'); ?>" class="card-img-top h-50" alt="...">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
-			</div>
-		</div>
-	</div>
-	<div class="card-deck mt-3">
-		<div class="card">
-			<img src="<?php echo base_url('assets/images/maggi.jpg'); ?>" class="card-img-top h-50" alt="jumbotron-image">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
-			</div>
-		</div>
-		<div class="card">
-			<img src="<?php echo base_url('assets/images/snack-cheese.jpg'); ?>" class="card-img-top h-50" alt="...">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
-			</div>
-		</div>
-		<div class="card">
-			<img src="<?php echo base_url('assets/images/snack-mix.jpg'); ?>" class="card-img-top h-50" alt="...">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
-			</div>
-		</div>
+		<?php endforeach ?>
 	</div>
 	<!-- end card -->
-
+	
 	<!-- page our visitor -->
 	<p class="text-md-center description"><span>our visitor</span><br> below is the opinion of our web visitors about the WSFood web</p>
 	<div class="container px-lg-5">

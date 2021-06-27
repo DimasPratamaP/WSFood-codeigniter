@@ -34,7 +34,8 @@
 		<div class="col-md-3 ">
 		     <div class="list-group ">
               <a href="<?= base_url('users/profile/'.$users['id']) ?>" class="list-group-item list-group-item-action">Profile</a>
-              <a href="<?= base_url('users/account-security/'.$users['id']) ?>" class="list-group-item list-group-item-action active">Account security</a>              
+              <a href="<?= base_url('users/account-security/'.$users['id']) ?>" class="list-group-item list-group-item-action active">Account security</a>
+			  <a href="<?= base_url('users/posting/'.$users['id']) ?>" class="list-group-item list-group-item-action">Posting</a>            
             </div> 
 		</div>
 		<div class="col-md-9">
